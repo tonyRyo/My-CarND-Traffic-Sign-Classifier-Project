@@ -18,15 +18,22 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-
 [image1]: ./predict/data_set_distribution.png
-[image2]: ./examples/color.png "Grayscaling"
-[image3]: ./examples/before_aug.png "Random Noise"
-[image4]: ./examples/after_aug.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image2]: ./examples/color.png "Color"
+[image3]: ./examples/before_aug.png "Grayscale"
+[image4]: ./examples/after_aug.png "rotate&trans"
+[image5]: ./examples/1.png "Traffic Sign 1"
+[image6]: ./examples/2.png "Traffic Sign 2"
+[image7]: ./examples/3.png "Traffic Sign 3"
+[image8]: ./examples/4.png "Traffic Sign 4"
+[image9]: ./examples/5.png "Traffic Sign 5"
+[image10]: ./predict/labels_accuracy.png "labels_accuracy"
+[image11]: ./predict/1.png "predict Traffic Sign 1"
+[image12]: ./predict/2.png "predict Traffic Sign 2"
+[image13]: ./predict/3.png "predict Traffic Sign 3"
+[image14]: ./predict/4.png "predict Traffic Sign 4"
+[image15]: ./predict/5.png "predict Traffic Sign 5"
+[image16]: ./examples/activationL2.png "activationL2"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -45,8 +52,25 @@ You're reading it! and here is a link to my [project code](./Traffic_Sign_Classi
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of traire not relate much to color data. Grayscale can also reduce the computation.  
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32,32,3)
+* The number of unique classes/labels in the data set is 43
 
+
+#### 2. Include an exploratory visualization of the dataset.
+
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data distributed.
+
+![alt text][image1]
+
+
+### Design and Test a Model Architecture
+
+#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+
+As a first step, I decided to convert the images to grayscale because the shape,text,logo of the Traffic Sign are more meaningful which are not relate much to color data. Grayscale can also reduce the computation.  
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -135,8 +159,8 @@ Training, validation and test accuracy are 0.97,0.963,0.951 which are considerab
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][./examples/1.png] ![alt text][./examples/2.png] ![alt text][./examples/3.png] 
-![alt text][./examples/4.png] ![alt text][./examples/5.png]
+![alt text][image5] ![alt text][image6] ![alt text][image7] 
+![alt text][image8] ![alt text][image9]
 
 All of the image are perfectly predicted.
 
@@ -157,7 +181,7 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 I also calculate the accuracy by each label using the test data-set, which could give an idea of the prediction reliability for the new images.
 
-![alt text][./predict/labels_accuracy.png]
+![alt text][image10]
 
 Since accuracy of traffic sign label of the five image(which are 35,17,34,3,14) are higher than 0.9, the prediction of my model to the new five images is reliable.
 
@@ -168,24 +192,24 @@ The code for making predictions on my final model is located in the 20th code-ce
 
 For the first image, the model is completely sure that this is a KeepAhead(35) sign, and the image does contain a KeepAhead sign. The top five soft max probabilities were
 
-![alt text][./predict/1.png]
+![alt text][image11]
 
 For the second image, the model is completely sure that this is a NoEntry(17) sign, and the image does contain a NoEntry sign. The top five soft max probabilities were
 
-![alt text][./predict/2.png]
+![alt text][image12]
 
 For the third image, the model is completely sure that this is a TurnleftAhead(34) sign, and the image does contain a TurnleftAhead sign. The top five soft max probabilities were
 
-![alt text][./predict/3.png]
+![alt text][image13]
 
 For the fourth image, the model is completely sure that this is a 60kmh(3) sign, and the image does contain a 60kmh sign. The top five soft max probabilities were
 
-![alt text][./predict/4.png]
+![alt text][image14]
 
 For the fifth image, the model is completely sure that this is a Stop(14) sign, and the image does contain a Stop sign. The top five soft max probabilities were
 
-![alt text][./predict/5.png]
+![alt text][image15]
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
-
+![alt text][image16]
+I tested the actvation L2 output by using a NoEntry sign image. It seems that the bold white line characteristic “-” and the circle  characteristic in the traffic sign are activated seperately.
