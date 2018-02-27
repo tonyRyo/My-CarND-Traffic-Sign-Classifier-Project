@@ -56,7 +56,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data distributed.
 
-![alt text][.predict/data_set_distribution.png]
+![alt text](.predict/data_set_distribution.png)
 
 
 ### Design and Test a Model Architecture
