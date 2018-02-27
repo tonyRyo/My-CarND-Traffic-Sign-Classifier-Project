@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./predict/data_set_distribution.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -45,29 +45,12 @@ You're reading it! and here is a link to my [project code](./Traffic_Sign_Classi
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is 34799
-* The size of the validation set is 4410
-* The size of test set is 12630
-* The shape of a traffic sign image is (32,32,3)
-* The number of unique classes/labels in the data set is 43
+* The size of traire not relate much to color data. Grayscale can also reduce the computation.  
 
-
-#### 2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data distributed.
-
-![alt text](.predict/data_set_distribution.png)
-
-
-### Design and Test a Model Architecture
-
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
-As a first step, I decided to convert the images to grayscale because the shape,text,logo of the Traffic Sign are more meaningful which are not relate much to color data. Grayscale can also reduce the computation.  
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][./color.png]![alt text][.examples/before_aug.png]
+![alt text][image2]![alt text][image3]
 
 
 As a last step, I normalized the image data for data optimization.
@@ -79,7 +62,7 @@ So the new data set size is 5 times to the orignal one.
 
 Here is an example of an original image and an augmented image:
 
-![alt text][.examples/before_aug.png]![alt text][.examples/after_aug.png]
+![alt text][image3]![alt text][image4]
 
 The difference between the original data set and the augmented data set is the following,
 1.Randomly translate the image with a constraint keeping the sign of the image inside the image window.
