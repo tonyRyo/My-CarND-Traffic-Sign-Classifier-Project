@@ -19,10 +19,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./predict/data_set_distribution.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
+[image1]: ./predict/data_set_distribution.png
+[image2]: ./examples/color.png "Grayscaling"
+[image3]: ./examples/before_aug.png "Random Noise"
+[image4]: ./examples/after_aug.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
